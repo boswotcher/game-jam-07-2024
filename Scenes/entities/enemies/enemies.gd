@@ -12,6 +12,7 @@ extends Node
 ]
 
 @onready var enemy_template = preload("res://Scenes/entities/enemies/enemy_template.tscn")
+@onready var experienceDrop = preload("res://Scenes/entities/pickup/experience/experience.tscn")
 
 @onready var enemy_nodes = get_node("/root/World/Enemies")
 @onready var player_node = get_node("/root/World/Player")
@@ -28,6 +29,7 @@ func _ready():
 		var enemy = enemy_template.instantiate()
 		#enemy.position = player_node.position
 		enemy.position = origin_position_nodes[rng.randf_range(0, 7)].position
+		enemy.connect("enemy_death", on_enemy_death);
 		enemy.set_player(player_node);
 		enemy_nodes.add_child(enemy)
 	)
@@ -36,4 +38,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#for now, spawn 4 enemies every 3 seconds
+	pass
+	
+func on_enemy_death(enemy: CharacterBody2D):
+	var enemyLoc = enemy.global_position;
+	enemy.queue_free()
+	var newXP = experienceDrop.instantiate();
+	enemy_nodes.add_child(newXP)
+	newXP.position = enemyLoc;
 	pass

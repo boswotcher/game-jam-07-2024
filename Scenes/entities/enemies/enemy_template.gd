@@ -6,7 +6,7 @@ var damage = 1
 
 @export var max_collisions := 6
 
-signal enemy_death
+signal enemy_death(enemy)
 signal touch_player
 
 # Called when the node enters the scene tree for the first time.
@@ -27,11 +27,11 @@ func _physics_process(delta):
 		var collider = collision.get_collider();
 		if collision.get_collider().has_method("onCollision"):
 			collision.get_collider().onCollision(damage);
-		print_debug("I collided with ", collision.get_collider().name)	
+			enemy_death.emit(self)
 	pass
 
 
 
 func _on_attributes_entity_death():
-	enemy_death.emit()
+	enemy_death.emit(self)
 	pass # Replace with function body.
