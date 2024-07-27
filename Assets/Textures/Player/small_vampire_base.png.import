@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doq20unan34lt"
-path="res://.godot/imported/Vampire_BASE.png-4a44ecebdf80761fc0521f10ef75db30.ctex"
+uid="uid://dd5g1kd3dwdwo"
+path="res://.godot/imported/small_vampire_base.png-4d960a674a99c39062c23bab612dd34b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Vampire_BASE.png"
-dest_files=["res://.godot/imported/Vampire_BASE.png-4a44ecebdf80761fc0521f10ef75db30.ctex"]
+source_file="res://Assets/Textures/Player/small_vampire_base.png"
+dest_files=["res://.godot/imported/small_vampire_base.png-4d960a674a99c39062c23bab612dd34b.ctex"]
 
 [params]
 
