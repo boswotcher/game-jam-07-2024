@@ -18,7 +18,8 @@ region_enabled = true
 region_rect = Rect2(-4000, -4000, 16000, 16000)
 
 [node name="Player" parent="." instance=ExtResource("2_7xspl")]
-scale = Vector2(5, 5)
+position = Vector2(624, 339)
+scale = Vector2(0.1, 0.1)
 
 [node name="uiOverlay" parent="." instance=ExtResource("4_n5cui")]
 
