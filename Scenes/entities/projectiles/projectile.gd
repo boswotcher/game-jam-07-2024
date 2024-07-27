@@ -3,15 +3,18 @@ extends CharacterBody2D
 @export var speed = 650.0;
 @onready var kill_timer = $KillTimer;
 @export var kill_wait = 15.0; 
-var damage = 1;
+var damage = 5;
 var dir = "east";
 var paused = false;
+
+var entityType = "bullet";
 
 func _ready():
 	kill_timer.wait_time = kill_wait;
 	kill_timer.start()
 
 func _physics_process(delta):
+	$Sprite2D.rotation =.5
 	if !paused:
 		match(dir):
 			"east":

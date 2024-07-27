@@ -2,8 +2,8 @@ extends Control
 
 const projectile = preload("res://Scenes/entities/projectiles/projectile.tscn")
 @onready var shoot_timer = $ShootTimer;
-@export var damage = 1;
-@export var shoot_timer_wait_time = 0.2;
+@export var damage = 4;
+@export var shoot_timer_wait_time = 0.3;
 
 var dir;
 

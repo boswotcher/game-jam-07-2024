@@ -1,14 +1,15 @@
-[gd_scene load_steps=52 format=3 uid="uid://dbea8h6i0r022"]
+[gd_scene load_steps=53 format=3 uid="uid://dbea8h6i0r022"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_fbx7u"]
 [ext_resource type="Texture2D" uid="uid://eiu4nr3nwlli" path="res://Assets/Textures/Player/Vamp sprite sheet.png" id="2_vcafa"]
 [ext_resource type="PackedScene" uid="uid://ci8ab86c4bvb7" path="res://Scenes/world/uiOverlay/uiOverlay.tscn" id="3_1h102"]
 [ext_resource type="PackedScene" uid="uid://dx4h6h1wbltss" path="res://Scenes/entities/attributes.tscn" id="3_siadi"]
-[ext_resource type="PackedScene" uid="uid://clxgwk3kwhspi" path="res://player/Weapons/weaponsController.tscn" id="5_ojrwt"]
+[ext_resource type="PackedScene" uid="uid://clxgwk3kwhspi" path="res://Player/Weapons/weaponsController.tscn" id="5_ojrwt"]
+[ext_resource type="PackedScene" uid="uid://c057qvmvmvdao" path="res://Scenes/upgrades/upgradeModal.tscn" id="6_q83r2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xcjx"]
-radius = 229.0
-height = 766.0
+radius = 32.0
+height = 162.0
 
 [sub_resource type="Animation" id="Animation_dbnkl"]
 resource_name = "idle"
@@ -323,12 +324,19 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_fbx7u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 4)
 shape = SubResource("CapsuleShape2D_6xcjx")
 
 [node name="Attributes" parent="." instance=ExtResource("3_siadi")]
+offset_left = -24.0
+offset_top = -96.0
+offset_right = -24.0
+offset_bottom = -96.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -337,7 +345,10 @@ offset = Vector2(40, 0)
 transform = Transform2D(1, 0, 0, 1, 40, 0)
 
 [node name="Main" parent="Camera2D/CanvasLayer" instance=ExtResource("3_1h102")]
-position = Vector2(20, 30)
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 20.0
+offset_bottom = 30.0
 scale = Vector2(0.7, 0.7)
 metadata/_edit_group_ = true
 
@@ -349,7 +360,16 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_sstmy")
 animation = &"idle"
 
+[node name="GameTimerLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="UpgradeModal" parent="." instance=ExtResource("6_q83r2")]
+visible = false
+
 [connection signal="entityDeath" from="Attributes" to="." method="_on_attributes_entity_death"]
+[connection signal="modal_closed" from="UpgradeModal" to="." method="_on_upgrade_modal_modal_closed"]

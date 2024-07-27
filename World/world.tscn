@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://puk27svdokqn"]
 
 [ext_resource type="Texture2D" uid="uid://clprthcm6y532" path="res://Assets/Textures/World/Ground_tile.jpg" id="1_28me4"]
-[ext_resource type="PackedScene" path="res://Player/player.tscn" id="2_f7mth"]
+[ext_resource type="PackedScene" uid="uid://dbea8h6i0r022" path="res://Player/player.tscn" id="2_f7mth"]
 
 [node name="World" type="Node2D"]
 

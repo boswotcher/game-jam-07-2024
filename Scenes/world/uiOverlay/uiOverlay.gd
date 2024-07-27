@@ -1,11 +1,12 @@
-extends Node2D
+extends Control
 
 signal upgrade_modal_closed
+
+@onready var player_node = get_node("/root/World/Player")
 
 func _on_go_to_death_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/death/deathScreen.tscn")
 	pass # Replace with function body.
-
 
 func _on_open_upgrades_button_pressed():
 	$UpgradeModal.visible=true

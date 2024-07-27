@@ -22,6 +22,9 @@ extends Node
 var enemies = [];
 var timer: Timer;
 
+var monster_base_health = 5;
+var bonus_health=0;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer = Timer.new()
@@ -32,6 +35,7 @@ func _ready():
 		var enemy = enemy_template.instantiate()
 		#enemy.position = player_node.position
 		enemy.position = origin_position_nodes[rng.randf_range(0, 7)].position
+		enemy.set_max_health(monster_base_health+bonus_health)
 		enemy.connect("enemy_death", on_enemy_death);
 		enemy.set_player(player_node);
 		enemy_nodes.add_child(enemy)
@@ -49,7 +53,10 @@ func toggle_pause(pause: bool):
 	
 	for enemy in enemies:
 		enemy.toggle_pause(pause);
-	
+		
+func adjust_buffs(minutes_elapsed):
+	bonus_health = minutes_elapsed;
+
 func on_enemy_death(enemy: CharacterBody2D):
 	var enemyLoc = enemy.global_position;
 	enemies.erase(enemy)
