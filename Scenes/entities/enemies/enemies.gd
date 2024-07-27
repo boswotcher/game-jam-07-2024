@@ -11,7 +11,7 @@ extends Node
 	get_node("/root/World/Spawners/EnemySpawner_7")
 ]
 
-@onready var enemy_template = preload("res://Scenes/enemies/enemy_template.tscn")
+@onready var enemy_template = preload("res://Scenes/entities/enemies/enemy_template.tscn")
 
 @onready var enemy_nodes = get_node("/root/World/Enemies")
 @onready var player_node = get_node("/root/World/Player")
