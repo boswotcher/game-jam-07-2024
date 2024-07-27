@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://puk27svdokqn"]
+[gd_scene load_steps=6 format=3 uid="uid://puk27svdokqn"]
 
 [ext_resource type="Texture2D" uid="uid://clprthcm6y532" path="res://Assets/Textures/World/Ground_tile.jpg" id="1_8qjvk"]
 [ext_resource type="Script" path="res://Scenes/world/world.gd" id="1_hbo60"]
-[ext_resource type="PackedScene" uid="uid://dbea8h6i0r022" path="res://player/player.tscn" id="2_7xspl"]
+[ext_resource type="PackedScene" uid="uid://dbea8h6i0r022" path="res://Player/player.tscn" id="2_7xspl"]
 [ext_resource type="PackedScene" uid="uid://ci8ab86c4bvb7" path="res://Scenes/world/uiOverlay/uiOverlay.tscn" id="4_n5cui"]
+[ext_resource type="Script" path="res://Scenes/world/enemies.gd" id="5_ssywa"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_hbo60")
@@ -20,3 +21,6 @@ region_rect = Rect2(-4000, -4000, 16000, 16000)
 scale = Vector2(5, 5)
 
 [node name="uiOverlay" parent="." instance=ExtResource("4_n5cui")]
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("5_ssywa")

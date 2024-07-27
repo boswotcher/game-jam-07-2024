@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c521fnoy3iu8t"]
+
+[ext_resource type="Texture2D" uid="uid://c43iopbo60p1" path="res://icon.svg" id="1_uip30"]
+
+[node name="EnemyTemplate" type="Node2D"]
+
+[node name="Enemy" type="Sprite2D" parent="."]
+texture = ExtResource("1_uip30")
