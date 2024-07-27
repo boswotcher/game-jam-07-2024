@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var player
-var speed = 100.0
+var speed = 200.0
 var damage = 1
 
 @export var max_collisions := 6

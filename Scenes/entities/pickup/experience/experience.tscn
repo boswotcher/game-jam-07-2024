@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bivjmmj1w76qk"]
 
 [ext_resource type="Script" path="res://Scenes/entities/pickup/experience/experience.gd" id="1_fgpf4"]
-[ext_resource type="Texture2D" uid="uid://dxd2p8ktf4la2" path="res://Assets/placeholder.png" id="1_o51du"]
+[ext_resource type="Texture2D" uid="uid://cy1hordsvdg3j" path="res://Assets/Textures/Pickups/xp.png" id="2_dwyt2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljua1"]
 
@@ -11,9 +11,7 @@ collision_mask = 2
 script = ExtResource("1_fgpf4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.658824, 0.0431373, 0, 1)
-scale = Vector2(16, 24)
-texture = ExtResource("1_o51du")
+texture = ExtResource("2_dwyt2")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ljua1")

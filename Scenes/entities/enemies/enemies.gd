@@ -23,7 +23,7 @@ extends Node
 func _ready():
 	var timer = Timer.new()
 	timer.autostart = true
-	timer.wait_time = 3
+	timer.wait_time = 2
 	add_child(timer)
 	timer.timeout.connect(func():
 		var enemy = enemy_template.instantiate()
