@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c057qvmvmvdao"]
 
-[ext_resource type="Script" path="res://Scripts/upgrades/upgradeModal.gd" id="1_gtlm4"]
+[ext_resource type="Script" path="res://Scenes/upgrades/upgradeModal.gd" id="1_gtlm4"]
 [ext_resource type="Texture2D" uid="uid://dxd2p8ktf4la2" path="res://Assets/placeholder.png" id="2_6s3la"]
 [ext_resource type="PackedScene" uid="uid://b47pldg6sfwe4" path="res://Scenes/upgrades/upgradeOptionList.tscn" id="2_i1dti"]
 

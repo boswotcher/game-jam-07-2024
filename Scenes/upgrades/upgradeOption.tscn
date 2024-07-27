@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c244apr2t0mb2"]
 
-[ext_resource type="Script" path="res://Scripts/upgrades/upgradeOption.gd" id="1_5n71q"]
+[ext_resource type="Script" path="res://Scenes/upgrades/upgradeOption.gd" id="1_5n71q"]
 
 [node name="UpgradeOption" type="Button"]
 custom_minimum_size = Vector2(150, 200)
