@@ -6,6 +6,8 @@ var starting_health = 100
 var experience = 0.0
 var level = 1
 
+signal playerDeath
+
 func _ready():
 	$Attributes.init(starting_health)
 
@@ -19,4 +21,10 @@ func movement():
 	velocity = mov.normalized() * movement_speed
 	move_and_slide()
 	
+func onCollision(damage):
+	$Attributes.takeDamage(damage)
 
+
+func _on_attributes_entity_death():
+	playerDeath.emit();
+	pass # Replace with function body.

@@ -52,3 +52,5 @@ position = Vector2(38, 680)
 
 [node name="EnemySpawner_7" parent="Spawners" instance=ExtResource("6_37j8o")]
 position = Vector2(33, 347)
+
+[connection signal="playerDeath" from="Player" to="." method="_on_player_player_death"]

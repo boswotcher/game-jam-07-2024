@@ -13,7 +13,9 @@ func init(health):
 	pass
 	
 func takeDamage(damage):
-	currentHealth -= damage
+	if(currentHealth > 0):
+		currentHealth -= damage;
+	$healthBar.scale.x = (currentHealth as float/maxHealth as float)
 	if(currentHealth <= 0):
 		die();
 	pass
