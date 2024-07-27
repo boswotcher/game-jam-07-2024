@@ -11,7 +11,7 @@ extends Node
 	get_node("/root/World/Spawners/EnemySpawner_7")
 ]
 
-@onready var enemy_template = preload("res://Scenes/enemies/enemy_template.tscn")
+@onready var enemy_template = preload("res://Scenes/entities/enemies/enemy_template.tscn")
 
 @onready var enemy_nodes = get_node("/root/World/Enemies")
 @onready var player_node = get_node("/root/World/Player")
@@ -28,6 +28,7 @@ func _ready():
 		var enemy = enemy_template.instantiate()
 		#enemy.position = player_node.position
 		enemy.position = origin_position_nodes[rng.randf_range(0, 7)].position
+		enemy.set_player(player_node);
 		enemy_nodes.add_child(enemy)
 	)
 

@@ -1,6 +1,13 @@
 extends CharacterBody2D
 
-var movement_speed = 200.0
+var movement_speed = 1000.0
+var starting_health = 100
+
+var experience = 0.0
+var level = 1
+
+func _ready():
+	$Attributes.init(starting_health)
 
 func _physics_process(delta):
 	movement()
