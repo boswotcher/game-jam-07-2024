@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b47pldg6sfwe4"]
+
+[ext_resource type="Script" path="res://Scenes/upgrades/upgradeOptionList.gd" id="1_ju0h7"]
+
+[node name="UpgradeList" type="HBoxContainer"]
+alignment = 1
+script = ExtResource("1_ju0h7")

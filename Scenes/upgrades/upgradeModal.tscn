@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://c057qvmvmvdao"]
+
+[ext_resource type="Script" path="res://Scenes/upgrades/upgradeModal.gd" id="1_gtlm4"]
+[ext_resource type="Texture2D" uid="uid://dxd2p8ktf4la2" path="res://Assets/placeholder.png" id="2_6s3la"]
+[ext_resource type="PackedScene" uid="uid://b47pldg6sfwe4" path="res://Scenes/upgrades/upgradeOptionList.tscn" id="2_i1dti"]
+
+[node name="UpgradeModal" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gtlm4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.439049, 0.439049, 0.439049, 1)
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6s3la")
+
+[node name="UpgradeList" parent="." instance=ExtResource("2_i1dti")]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -137.0
+offset_right = 75.5
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Choose an Upgrade"
+
+[node name="Button_Skip" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.5
+offset_top = 108.0
+offset_right = 44.5
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Skip
+"
+
+[connection signal="option_selected" from="UpgradeList" to="." method="_on_upgrade_list_option_selected"]
+[connection signal="button_down" from="Button_Skip" to="." method="_on_button_skip_button_down"]
