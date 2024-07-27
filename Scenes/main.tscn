@@ -1,8 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci8ab86c4bvb7"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_6bnm7"]
-[ext_resource type="Script" path="res://Scenes/OpenUpgradesButton.gd" id="3_gpiv4"]
 [ext_resource type="PackedScene" uid="uid://c057qvmvmvdao" path="res://Scenes/upgrades/upgradeModal.tscn" id="4_syll3"]
+
+[sub_resource type="GDScript" id="GDScript_yqi2k"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6bnm7")
@@ -18,7 +32,7 @@ offset_top = 67.0
 offset_right = 162.0
 offset_bottom = 126.0
 text = "Open Upgrades"
-script = ExtResource("3_gpiv4")
+script = SubResource("GDScript_yqi2k")
 
 [node name="UpgradeModal" parent="." instance=ExtResource("4_syll3")]
 visible = false
