@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbea8h6i0r022"]
+
+[ext_resource type="Texture2D" uid="uid://doq20unan34lt" path="res://Player/Vampire_BASE.png" id="1_b7nii"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xcjx"]
+radius = 229.0
+height = 766.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11, 3)
+texture = ExtResource("1_b7nii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6xcjx")
