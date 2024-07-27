@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c74poeynv36n8" path="res://Scenes/entities/enemies/enemy_spawner.tscn" id="6_37j8o"]
 
 [node name="World" type="Node2D"]
+light_mask = 0
 script = ExtResource("1_hbo60")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -62,4 +63,5 @@ position = Vector2(38, 680)
 [node name="EnemySpawner_7" parent="Spawners" instance=ExtResource("6_37j8o")]
 position = Vector2(33, 347)
 
+[connection signal="levelUp" from="Player" to="." method="_on_player_level_up"]
 [connection signal="playerDeath" from="Player" to="." method="_on_player_player_death"]

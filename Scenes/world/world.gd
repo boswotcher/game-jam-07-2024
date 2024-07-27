@@ -10,7 +10,15 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _on_player_player_death():
 	get_tree().change_scene_to_file("res://Scenes/death/deathScreen.tscn")
 	pass # Replace with function body.
+
+
+func _on_player_level_up():
+	_pause_entities();
+	$uiOverlay.show_upgrades_modal()
+	pass # Replace with function body.
+
+func _pause_entities():
+	pass;
