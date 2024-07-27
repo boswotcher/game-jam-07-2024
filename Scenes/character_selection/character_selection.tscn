@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5jfm2m1l7k1y"]
 
-[ext_resource type="Script" path="res://Scripts/character_select_button.gd" id="1_1adkk"]
+[ext_resource type="Script" path="res://Scenes/character_selection/character_select.gd" id="1_1adkk"]
 
 [node name="CharacterSelect" type="Control"]
 layout_mode = 3
@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1adkk")
 
 [node name="CharacterSelectButton" type="Button" parent="."]
 layout_mode = 1
@@ -22,4 +23,5 @@ offset_bottom = 8.0
 text = "Select"
 script = ExtResource("1_1adkk")
 
+[connection signal="pressed" from="CharacterSelectButton" to="." method="_on_character_select_button_pressed"]
 [connection signal="pressed" from="CharacterSelectButton" to="CharacterSelectButton" method="_on_pressed"]
