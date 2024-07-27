@@ -1,6 +1,5 @@
-extends Button
+extends Control
 
-
-func _on_pressed():
+func _on_character_select_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	pass # Replace with function body.

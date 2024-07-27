@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ugeuq8odgtjl"]
 
-[ext_resource type="Script" path="res://Scripts/TitleScreen.gd" id="1_lupbs"]
+[ext_resource type="Script" path="res://Scenes/title/title_screen.gd" id="1_lupbs"]
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lupbs")
 
 [node name="Start Button" type="Button" parent="."]
 layout_mode = 1
@@ -19,7 +20,6 @@ anchor_right = 0.55
 anchor_bottom = 0.475
 grow_vertical = 2
 text = "Start"
-script = ExtResource("1_lupbs")
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1
@@ -31,8 +31,9 @@ anchor_bottom = 0.575
 grow_horizontal = 2
 grow_vertical = 0
 text = "Quit"
-script = ExtResource("1_lupbs")
 
+[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Start Button" to="Start Button" method="_on_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="Start Button" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]
