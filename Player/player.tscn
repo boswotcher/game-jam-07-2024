@@ -11,8 +11,6 @@ radius = 229.0
 height = 766.0
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_fbx7u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,21 +20,17 @@ texture = ExtResource("2_qodi3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6xcjx")
 
+[node name="Attributes" parent="." instance=ExtResource("3_siadi")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Main" parent="Camera2D" instance=ExtResource("3_1h102")]
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+offset = Vector2(40, 0)
+transform = Transform2D(1, 0, 0, 1, 40, 0)
 
-[node name="Attributes" parent="." instance=ExtResource("3_siadi")]
-anchors_preset = 5
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -176.0
-offset_top = -480.0
-offset_right = -176.0
-offset_bottom = -480.0
-grow_vertical = 1
-scale = Vector2(7, 7)
+[node name="Main" parent="Camera2D/CanvasLayer" instance=ExtResource("3_1h102")]
+position = Vector2(20, 30)
+scale = Vector2(0.7, 0.7)
+metadata/_edit_group_ = true
 
 [node name="WeaponsController" parent="." instance=ExtResource("5_ojrwt")]
-
-[connection signal="entityDeath" from="Attributes" to="." method="_on_attributes_entity_death"]
