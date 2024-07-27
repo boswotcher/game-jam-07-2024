@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbea8h6i0r022"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_fbx7u"]
-[ext_resource type="Texture2D" uid="uid://doq20unan34lt" path="res://Assets/Textures/Player/Vampire_BASE.png" id="2_184ea"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_fbx7u"]
+[ext_resource type="Texture2D" uid="uid://doq20unan34lt" path="res://Assets/Textures/Player/Vampire_BASE.png" id="2_qodi3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xcjx"]
 radius = 229.0
@@ -12,7 +12,7 @@ script = ExtResource("1_fbx7u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, 3)
-texture = ExtResource("2_184ea")
+texture = ExtResource("2_qodi3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6xcjx")
