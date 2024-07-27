@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbea8h6i0r022"]
+[gd_scene load_steps=7 format=3 uid="uid://dbea8h6i0r022"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_fbx7u"]
 [ext_resource type="Texture2D" uid="uid://doq20unan34lt" path="res://Assets/Textures/Player/Vampire_BASE.png" id="2_qodi3"]
 [ext_resource type="PackedScene" uid="uid://ci8ab86c4bvb7" path="res://Scenes/world/uiOverlay/uiOverlay.tscn" id="3_1h102"]
 [ext_resource type="PackedScene" uid="uid://dx4h6h1wbltss" path="res://Scenes/entities/attributes.tscn" id="3_siadi"]
+[ext_resource type="PackedScene" uid="uid://clxgwk3kwhspi" path="res://Player/Weapons/weaponsController.tscn" id="5_ojrwt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xcjx"]
 radius = 229.0
@@ -26,5 +27,16 @@ shape = SubResource("CapsuleShape2D_6xcjx")
 [node name="Main" parent="Camera2D" instance=ExtResource("3_1h102")]
 
 [node name="Attributes" parent="." instance=ExtResource("3_siadi")]
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -176.0
+offset_top = -480.0
+offset_right = -176.0
+offset_bottom = -480.0
+grow_vertical = 1
+scale = Vector2(7, 7)
+
+[node name="WeaponsController" parent="." instance=ExtResource("5_ojrwt")]
 
 [connection signal="entityDeath" from="Attributes" to="." method="_on_attributes_entity_death"]

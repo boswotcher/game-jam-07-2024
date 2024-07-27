@@ -27,9 +27,8 @@ func _physics_process(delta):
 		var collision = move_and_collide(speed*velocity*delta)
 		if(collision):
 			var collider = collision.get_collider();
-			if collision.get_collider().has_method("onCollision"):
-				collision.get_collider().onCollision(damage);
-				enemy_death.emit(self)
+			if collision.get_collider().has_method("on_hit"):
+				collision.get_collider().on_hit(damage);
 
 func toggle_pause(pause: bool):
 	if pause != null:
@@ -38,5 +37,7 @@ func toggle_pause(pause: bool):
 		paused = !paused;
 
 func _on_attributes_entity_death():
-	enemy_death.emit(self)
-	pass # Replace with function body.
+	enemy_death.emit(self);
+
+func on_hit(damage):
+	$Attributes.takeDamage(damage);
