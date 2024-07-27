@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://clprthcm6y532" path="res://Assets/Textures/World/Ground_tile.jpg" id="1_8qjvk"]
 [ext_resource type="Script" path="res://Scenes/world/world.gd" id="1_hbo60"]
-[ext_resource type="PackedScene" uid="uid://dbea8h6i0r022" path="res://Player/player.tscn" id="2_7xspl"]
+[ext_resource type="PackedScene" uid="uid://dbea8h6i0r022" path="res://player/player.tscn" id="2_7xspl"]
 [ext_resource type="Script" path="res://Scenes/world/worldWrap.gd" id="2_jwo8n"]
 [ext_resource type="Script" path="res://Scenes/entities/enemies/enemies.gd" id="5_dsnuh"]
 [ext_resource type="PackedScene" uid="uid://c74poeynv36n8" path="res://Scenes/entities/enemies/enemy_spawner.tscn" id="6_37j8o"]

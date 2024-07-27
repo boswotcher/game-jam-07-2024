@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var _animated_sprite = $AnimatedSprite2D
+
 var movement_speed = 500.0
 var starting_health = 100
 
@@ -16,6 +18,7 @@ var facing = "east";
 
 func _ready():
 	$Attributes.init(starting_health)
+	_animated_sprite.play('idle')
 	_on_gain_exp(0);
 
 func _physics_process(delta):
