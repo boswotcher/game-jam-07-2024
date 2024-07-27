@@ -7,20 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://clxgwk3kwhspi" path="res://Player/Weapons/weaponsController.tscn" id="5_ojrwt"]
 [ext_resource type="PackedScene" uid="uid://c057qvmvmvdao" path="res://Scenes/upgrades/upgradeModal.tscn" id="6_q83r2"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xcjx"]
-radius = 32.0
-height = 162.0
-
-[sub_resource type="Animation" id="Animation_dbnkl"]
-resource_name = "idle"
-length = 1.00001
-step = 0.5
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fbpma"]
-_data = {
-"idle": SubResource("Animation_dbnkl")
-}
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcmg3"]
 atlas = ExtResource("2_vcafa")
 region = Rect2(0, 0, 528, 528)
@@ -323,13 +309,33 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xcjx"]
+radius = 16.0
+height = 116.0
+
+[sub_resource type="Animation" id="Animation_dbnkl"]
+resource_name = "idle"
+length = 1.00001
+step = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fbpma"]
+_data = {
+"idle": SubResource("Animation_dbnkl")
+}
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_fbx7u")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 0)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_sstmy")
+animation = &"idle"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 4)
+position = Vector2(1, 4)
 shape = SubResource("CapsuleShape2D_6xcjx")
 
 [node name="Attributes" parent="." instance=ExtResource("3_siadi")]
@@ -358,11 +364,6 @@ metadata/_edit_group_ = true
 libraries = {
 "": SubResource("AnimationLibrary_fbpma")
 }
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-sprite_frames = SubResource("SpriteFrames_sstmy")
-animation = &"idle"
 
 [node name="GameTimerLabel" type="Label" parent="."]
 offset_right = 40.0
