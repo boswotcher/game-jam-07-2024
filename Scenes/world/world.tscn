@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://puk27svdokqn"]
+[gd_scene load_steps=7 format=3 uid="uid://puk27svdokqn"]
 
 [ext_resource type="Texture2D" uid="uid://clprthcm6y532" path="res://Assets/Textures/World/Ground_tile.jpg" id="1_8qjvk"]
 [ext_resource type="Script" path="res://Scenes/world/world.gd" id="1_hbo60"]
 [ext_resource type="PackedScene" uid="uid://dbea8h6i0r022" path="res://Player/player.tscn" id="2_7xspl"]
 [ext_resource type="PackedScene" uid="uid://ci8ab86c4bvb7" path="res://Scenes/world/uiOverlay/uiOverlay.tscn" id="4_n5cui"]
-[ext_resource type="Script" path="res://Scenes/world/enemies.gd" id="5_ssywa"]
+[ext_resource type="Script" path="res://Scenes/enemies/enemies.gd" id="5_dsnuh"]
+[ext_resource type="PackedScene" uid="uid://c74poeynv36n8" path="res://Scenes/enemies/enemy_spawner.tscn" id="6_37j8o"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_hbo60")
@@ -24,4 +25,30 @@ scale = Vector2(0.1, 0.1)
 [node name="uiOverlay" parent="." instance=ExtResource("4_n5cui")]
 
 [node name="Enemies" type="Node2D" parent="."]
-script = ExtResource("5_ssywa")
+script = ExtResource("5_dsnuh")
+
+[node name="Spawners" type="Node2D" parent="."]
+
+[node name="EnemySpawner_0" parent="Spawners" instance=ExtResource("6_37j8o")]
+position = Vector2(45, 36)
+
+[node name="EnemySpawner_1" parent="Spawners" instance=ExtResource("6_37j8o")]
+position = Vector2(614, 50)
+
+[node name="EnemySpawner_2" parent="Spawners" instance=ExtResource("6_37j8o")]
+position = Vector2(1234, 43)
+
+[node name="EnemySpawner_3" parent="Spawners" instance=ExtResource("6_37j8o")]
+position = Vector2(1234, 352)
+
+[node name="EnemySpawner_4" parent="Spawners" instance=ExtResource("6_37j8o")]
+position = Vector2(1249, 680)
+
+[node name="EnemySpawner_5" parent="Spawners" instance=ExtResource("6_37j8o")]
+position = Vector2(633, 673)
+
+[node name="EnemySpawner_6" parent="Spawners" instance=ExtResource("6_37j8o")]
+position = Vector2(38, 680)
+
+[node name="EnemySpawner_7" parent="Spawners" instance=ExtResource("6_37j8o")]
+position = Vector2(33, 347)

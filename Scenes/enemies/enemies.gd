@@ -1,12 +1,22 @@
 extends Node
 
-@onready var origin_position = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-@onready var enemy_texture = load("res://icon.svg")
+@onready var origin_position_nodes = [
+	get_node("/root/World/Spawners/EnemySpawner_0"), 
+	get_node("/root/World/Spawners/EnemySpawner_1"), 
+	get_node("/root/World/Spawners/EnemySpawner_2"), 
+	get_node("/root/World/Spawners/EnemySpawner_3"), 
+	get_node("/root/World/Spawners/EnemySpawner_4"), 
+	get_node("/root/World/Spawners/EnemySpawner_5"), 
+	get_node("/root/World/Spawners/EnemySpawner_6"), 
+	get_node("/root/World/Spawners/EnemySpawner_7")
+]
 
 @onready var enemy_template = preload("res://Scenes/enemies/enemy_template.tscn")
 
 @onready var enemy_nodes = get_node("/root/World/Enemies")
 @onready var player_node = get_node("/root/World/Player")
+
+@onready var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,13 +25,10 @@ func _ready():
 	timer.wait_time = 3
 	add_child(timer)
 	timer.timeout.connect(func():
-		print("hello")
 		var enemy = enemy_template.instantiate()
-		enemy.position = player_node.position
+		#enemy.position = player_node.position
+		enemy.position = origin_position_nodes[rng.randf_range(0, 7)].position
 		enemy_nodes.add_child(enemy)
-		#var node = Sprite2D.new()
-		#node.texture = enemy_texture
-		#add_child(node)
 	)
 
 
