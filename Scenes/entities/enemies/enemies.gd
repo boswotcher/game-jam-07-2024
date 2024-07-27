@@ -28,6 +28,7 @@ func _ready():
 		var enemy = enemy_template.instantiate()
 		#enemy.position = player_node.position
 		enemy.position = origin_position_nodes[rng.randf_range(0, 7)].position
+		enemy.set_player(player_node);
 		enemy_nodes.add_child(enemy)
 	)
 
