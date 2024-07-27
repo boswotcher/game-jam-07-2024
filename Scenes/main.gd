@@ -1,5 +1,21 @@
 extends Node2D
 
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_open_upgrades_button_pressed():
+	$UpgradeModal.visible = true;
+	pass # Replace with function body.
+
+
 func _on_go_to_death_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/death/death_screen.tscn")
 	pass # Replace with function body.

@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci8ab86c4bvb7"]
+[gd_scene load_steps=4 format=3 uid="uid://ci8ab86c4bvb7"]
 
-[ext_resource type="Script" path="res://Scripts/GoToDeathButton.gd" id="1_4cshe"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_6bnm7"]
 [ext_resource type="Script" path="res://Scenes/OpenUpgradesButton.gd" id="3_gpiv4"]
 [ext_resource type="PackedScene" uid="uid://c057qvmvmvdao" path="res://Scenes/upgrades/upgradeModal.tscn" id="4_syll3"]
@@ -28,5 +27,6 @@ offset_top = 249.0
 offset_right = 629.0
 offset_bottom = 249.0
 
+[connection signal="pressed" from="GoToDeathButton" to="." method="_on_go_to_death_button_pressed"]
 [connection signal="pressed" from="GoToDeathButton" to="GoToDeathButton" method="_on_pressed"]
 [connection signal="pressed" from="OpenUpgradesButton" to="." method="_on_open_upgrades_button_pressed"]
