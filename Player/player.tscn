@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbea8h6i0r022"]
+[gd_scene load_steps=6 format=3 uid="uid://dbea8h6i0r022"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_fbx7u"]
-[ext_resource type="Texture2D" uid="uid://doq20unan34lt" path="res://Assets/Textures/Player/Vampire_BASE.png" id="2_184ea"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_fbx7u"]
+[ext_resource type="Texture2D" uid="uid://doq20unan34lt" path="res://Assets/Textures/Player/Vampire_BASE.png" id="2_qodi3"]
+[ext_resource type="PackedScene" uid="uid://ci8ab86c4bvb7" path="res://Scenes/world/uiOverlay/uiOverlay.tscn" id="3_1h102"]
 [ext_resource type="PackedScene" uid="uid://dx4h6h1wbltss" path="res://Scenes/entities/attributes.tscn" id="3_siadi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xcjx"]
@@ -11,22 +12,17 @@ height = 766.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_fbx7u")
 
-[node name="Attributes" parent="." instance=ExtResource("3_siadi")]
-anchors_preset = 5
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -176.0
-offset_top = -480.0
-offset_right = -176.0
-offset_bottom = -480.0
-grow_vertical = 1
-scale = Vector2(7, 7)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(11, 3)
-texture = ExtResource("2_184ea")
+texture = ExtResource("2_qodi3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6xcjx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Main" parent="Camera2D" instance=ExtResource("3_1h102")]
+
+[node name="Attributes" parent="." instance=ExtResource("3_siadi")]
 
 [connection signal="entityDeath" from="Attributes" to="." method="_on_attributes_entity_death"]
