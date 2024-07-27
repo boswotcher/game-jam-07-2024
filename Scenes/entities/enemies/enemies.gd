@@ -19,11 +19,14 @@ extends Node
 
 @onready var rng = RandomNumberGenerator.new()
 
+var enemies = [];
+var timer: Timer;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var timer = Timer.new()
+	timer = Timer.new()
 	timer.autostart = true
-	timer.wait_time = 2
+	timer.wait_time = 1
 	add_child(timer)
 	timer.timeout.connect(func():
 		var enemy = enemy_template.instantiate()
@@ -32,6 +35,7 @@ func _ready():
 		enemy.connect("enemy_death", on_enemy_death);
 		enemy.set_player(player_node);
 		enemy_nodes.add_child(enemy)
+		enemies.push_back(enemy)
 	)
 
 
@@ -40,8 +44,15 @@ func _process(_delta):
 	#for now, spawn 4 enemies every 3 seconds
 	pass
 	
+func toggle_pause(pause: bool):
+	timer.paused = pause;
+	
+	for enemy in enemies:
+		enemy.toggle_pause(pause);
+	
 func on_enemy_death(enemy: CharacterBody2D):
 	var enemyLoc = enemy.global_position;
+	enemies.erase(enemy)
 	enemy.queue_free()
 	var newXP = experienceDrop.instantiate();
 	enemy_nodes.add_child(newXP)

@@ -1,6 +1,7 @@
 extends Control
 
 const debug = true;
+signal modal_closed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,7 @@ func _on_button_skip_button_down():
 func cleanup():
 	#do all the post-select clean up
 	visible = false;
+	modal_closed.emit()
 	pass
 
 

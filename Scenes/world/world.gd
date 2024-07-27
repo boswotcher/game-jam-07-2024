@@ -16,9 +16,16 @@ func _on_player_player_death():
 
 
 func _on_player_level_up():
-	_pause_entities();
+	_toggle_pause_entities(true);
 	$uiOverlay.show_upgrades_modal()
 	pass # Replace with function body.
 
-func _pause_entities():
+func _toggle_pause_entities(pause:bool):
+	$Player.toggle_pause(pause);
+	$Enemies.toggle_pause(pause);
 	pass;
+
+
+func _on_ui_overlay_upgrade_modal_closed():
+	_toggle_pause_entities(false);
+	pass # Replace with function body.

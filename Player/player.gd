@@ -5,18 +5,21 @@ var starting_health = 100
 
 var experience = 0.0
 var current_level = 1
-var next_level_exp = 0
+var next_level_exp = 10
 var exp_needed_constant = 5
 
 signal playerDeath
 signal levelUp
+
+var paused = false;
 
 func _ready():
 	$Attributes.init(starting_health)
 	_on_gain_exp(0);
 
 func _physics_process(delta):
-	movement()
+	if(!paused):
+		movement()
 	
 func movement():
 	var x_movement = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -34,6 +37,12 @@ func movement():
 		
 func onCollision(damage):
 	$Attributes.takeDamage(damage)
+	
+func toggle_pause(pause: bool):
+	if pause != null:
+		paused = pause;
+	else:
+		paused = !paused;
 	
 func _on_gain_exp(exp_value):
 	experience += exp_value;

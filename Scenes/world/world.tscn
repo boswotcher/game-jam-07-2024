@@ -65,3 +65,4 @@ position = Vector2(33, 347)
 
 [connection signal="levelUp" from="Player" to="." method="_on_player_level_up"]
 [connection signal="playerDeath" from="Player" to="." method="_on_player_player_death"]
+[connection signal="upgrade_modal_closed" from="uiOverlay" to="." method="_on_ui_overlay_upgrade_modal_closed"]
