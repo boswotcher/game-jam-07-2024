@@ -12,9 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(577.5, 324)
-scale = Vector2(1.81005, 1.80447)
+scale = Vector2(3.017, 3)
 texture = ExtResource("1_3npdg")
+centered = false
 
 [node name="ReturnButton" type="Button" parent="."]
 layout_mode = 1
